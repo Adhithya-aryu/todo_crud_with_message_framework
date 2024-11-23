@@ -1,0 +1,11 @@
+{% extends "home.html" %}
+{% block title %}<title>Update</title>{% endblock %}
+{% block body %}
+<h1>Update Task </h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" data-confirm="Do you need to update Task ?" class="btn btn-primary">
+</form>
+<a href="{% url 'all' %}">View All Tasks</a>
+{% endblock %}

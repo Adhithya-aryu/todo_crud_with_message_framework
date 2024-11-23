@@ -1,0 +1,12 @@
+{% extends "home.html" %}
+{% block title %}<title>add</title>{% endblock %}
+{% block body %}
+
+<h1>Add Page </h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" data-confirm="Do you need to create new Task ?" class="btn btn-success">
+</form>
+<a href="{% url 'home' %}">Home</a>
+{% endblock %}
